@@ -5,6 +5,41 @@
  
  •	Front-End: HTML/CSS/JavaScript, Figma for UI mockups
 
+## Running the Project
+
+### Requirements
+- Java 21
+- Maven
+- MySQL Server
+
+### Configure the database
+Create a MySQL database for the application, or use an existing database. The application is not limited to a database named `digitaldb`; that name is only the default in the supplied configuration. Update the database name, MySQL username, and password in `UniversityDigitalCard/src/main/resources/application.properties` to match your setup. For example, change the database name in `spring.datasource.url` and set `spring.datasource.username` and `spring.datasource.password` to your MySQL credentials.
+
+The default configuration connects to MySQL on `localhost:3306` and creates the configured database if it does not already exist.
+
+### Start the application
+From the repository root, run:
+
+```bash
+cd UniversityDigitalCard
+mvn spring-boot:run
+```
+
+The API listens on port `8080`. Its base URL is:
+
+```text
+http://localhost:8080/cputdigitalcard.com/api/cputdigitalcard.com
+```
+
+For example, card details can be requested at `GET /GetCardDetails/{studentId}` under the API base URL.
+
+### Run the tests
+From the `UniversityDigitalCard` directory, run:
+
+```bash
+mvn test
+```
+
 # 1. Briefly Problem Statement and Solution.
 ## 1.1 Problem Statement
 At many educational institutions, including CPUT, students are required to collect physical student cards to access campus services and facilities. The current process for issuing these cards is inefficient and outdated. Students are forced to stand in long queues at printing facility, often due to slow systems and a lack of digital infrastructure. These bottlenecks lead to wasted time, student frustration, and delayed access to campus buildings.
